@@ -1,0 +1,16 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button color="primary" menu="first"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Components</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <app-menu-item *ngFor="let component of components | async" [component]="component"></app-menu-item>
+  </ion-list>
+
+</ion-content>

@@ -1,0 +1,17 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Searchbar</ion-title>
+  </ion-toolbar>
+  <ion-searchbar animated (ionChange)="search($event)"></ion-searchbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list class="animated fadeIn fast">
+    <ion-item *ngFor="let item of items | async | customFilter:pattern:'title'">
+      <ion-label>  {{ item.title }} </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

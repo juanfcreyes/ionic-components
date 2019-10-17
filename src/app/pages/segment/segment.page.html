@@ -1,0 +1,49 @@
+<app-header title="Segment"></app-header>
+
+<ion-toolbar>
+  <ion-segment color="tertiary" (ionChange)="segmentChanged($event)">
+    <ion-segment-button value="Everyone">
+      <ion-label>Everyone</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="DC Comics">
+      <ion-label>DC Comics</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="Marvel Comics">
+      <ion-label>Marvel Comics</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+</ion-toolbar>
+
+<ion-content>
+
+  <ion-list *ngIf="(superHeroes | async) === null">
+    <ion-item class="animated flash slow infinite"
+      *ngFor="let item of [1,1,1,1,1,1,1,1,1,1,1,1,1]">
+      <ion-label>
+        <h3>
+          <ion-skeleton-text width="70%">
+          </ion-skeleton-text>
+        </h3>
+        <p>
+          <ion-skeleton-text width="100%">
+          </ion-skeleton-text>
+        </p>
+      </ion-label>
+      <ion-label slot="end" class="ion-text-right">
+        <ion-skeleton-text width="40%">
+        </ion-skeleton-text>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-item class="animated fadeIn fast" *ngFor="let superHeroe of (superHeroes | async) | customFilter:publisher:'publisher'">
+      <ion-label>
+        <h3>{{ superHeroe.superhero }}<small> {{ superHeroe.alter_ego}} </small> </h3>
+        <p> {{ superHeroe.first_appearance }} </p>
+      </ion-label>
+      <ion-label slot="end" class="ion-text-right">{{ superHeroe.publisher }}</ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

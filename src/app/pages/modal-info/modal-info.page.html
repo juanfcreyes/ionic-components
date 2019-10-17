@@ -1,0 +1,16 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-title> {{ name }} - {{ country }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-button (click)="leaveNoArgs()" color="primary" expand="full">
+      Leave without arguments
+  </ion-button>
+
+  <ion-button (click)="leaveArgs()" color="secondary" expand="full">
+      Leave with arguments
+  </ion-button>
+
+</ion-content>
