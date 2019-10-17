@@ -1,6 +1,5 @@
 # Ionic-components
-An app with litle examples of ionic components
-An app developed with ionic CLI 5.2.7 and Angular 8.1.3
+An app with litle examples of ionic components. This app was developed with ionic CLI 5.2.7 and Angular 8.1.3
 
 
 ## Getting Started
@@ -9,7 +8,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-To execute the project on your machine yo need the following
+To execute the project on your machine you need the following
 
 ```
 * Nodejs v10.15.3 or higher
